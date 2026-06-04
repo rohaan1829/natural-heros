@@ -101,10 +101,10 @@ export function ProcessSection({
           )}
         </div>
 
-        {/* Timeline — full width on mobile (with extra left padding so the
-            rotated STEP label has room to sit beside the track), narrower
-            column on desktop. */}
-        <div className="flex flex-col pl-10 lg:pl-0">
+        {/* Timeline — needs enough left padding on mobile so the rotated
+            STEP label (≈150px wide at 32px font) sits beside the track
+            without clipping off the screen. */}
+        <div className="flex flex-col pl-24 lg:pl-0">
           {steps.map((step, i) => (
             <Step
               key={i}
