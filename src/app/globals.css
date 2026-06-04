@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — extracted from Figma Dev Mode (NeuroScript hiring test).
+ * Update these here; every component reads via Tailwind v4 theme aliases.
+ */
+@theme {
+  /* Brand palette */
+  --color-cream: #f5f1e8;
+  --color-cream-soft: #ebe5d6;
+  --color-forest: #2d4a2b;
+  --color-forest-deep: #1f3a1f;
+  --color-forest-ink: #1f2a1f;
+  --color-ink: #1d1d1b;
+  --color-muted: #5a6358;
+  --color-rule: #767473;
+  --color-line: #2d4a2b;
+  --color-card-border: #aeb097;
+  --color-sage: #dcdfd0;
+  --color-track-muted: #aeb097;
+
+  /* Semantic aliases */
+  --color-background: var(--color-cream);
+  --color-foreground: var(--color-ink);
+
+  /* Fonts */
+  --font-serif: var(--font-solway), ui-serif, Georgia, serif;
+  --font-mono: var(--font-dm-mono), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+  --font-display: var(--font-din), system-ui, sans-serif;
+
+  /* Layout */
+  --container-site: 1440px;
+  --container-content: 1248px;
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-mono);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-serif);
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .animate-fade {
+    animation: fade-in 350ms ease-out;
+  }
+}
