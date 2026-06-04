@@ -77,7 +77,7 @@ export function ProcessSection({
   }, [steps.length]);
 
   return (
-    <section className="bg-sage">
+    <section className="overflow-x-clip bg-sage">
       <Container
         as="div"
         className="flex flex-col gap-8 py-10 lg:flex-row lg:justify-between lg:py-24"

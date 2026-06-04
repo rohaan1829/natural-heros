@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="nl"
       className={`${solway.variable} ${dmMono.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-cream text-ink">
+      <body className="flex min-h-full flex-col overflow-x-clip bg-cream text-ink">
         {children}
       </body>
     </html>
