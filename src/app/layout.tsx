@@ -33,7 +33,7 @@ const barlow = Barlow({
 });
 
 export const metadata: Metadata = {
-  title: "Natural Heroes — Eucalyptus globulus",
+  title: "Natural Heroes",
   description:
     "Wild-harvested essential oils from the hills of Mértola. Farm to bottle, transparent and pure.",
 };
