@@ -21,6 +21,6 @@ export async function sanityFetch<T>({
   const client = getClient();
   if (!client) return null;
   return client.fetch<T>(query, params, {
-    next: { tags, revalidate: 3600 },
+    next: { tags, revalidate: 0 },
   });
 }
