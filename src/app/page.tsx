@@ -19,6 +19,14 @@ import type { Product, SiteSettings } from "@/lib/types";
 
 const DEFAULT_SLUG = "eucalyptus-globulus";
 
+/**
+ * Render at request time, not build time. The page reads content from
+ * Sanity, which means the build environment doesn't need to reach the
+ * CMS — and the rendered HTML always reflects the latest published
+ * data (cache-busted by the /api/revalidate webhook).
+ */
+export const dynamic = "force-dynamic";
+
 async function getData(): Promise<{
   product: Product;
   settings: SiteSettings;
