@@ -163,7 +163,7 @@ export default function SkinConditionsPage() {
 
       {/* Background gradient from cream (top) to white (bottom) fades
           out behind the header content and underneath the card grid. */}
-      <main className="flex-1 bg-[linear-gradient(180deg,#F6EFE6_0%,#FFFFFF_100%)] pb-24 pt-6 md:pb-20 md:pt-20">
+      <main className="flex-1 bg-[linear-gradient(180deg,#F5F1E8_0%,#FFFFFF_100%)] pb-24 pt-6 md:pb-20 md:pt-20">
         <div className="mx-auto flex w-full max-w-[1300px] flex-col items-center gap-6 px-4 md:gap-10 md:px-10">
           {/* Heading */}
           <header className="flex max-w-[792px] flex-col items-center gap-3 text-center md:gap-5">

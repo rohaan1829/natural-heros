@@ -499,7 +499,7 @@ export default async function ConditionDetailPage({
         ]}
       />
 
-      <main className="flex-1 bg-[linear-gradient(180deg,#F6EFE6_0%,#FFFFFF_100%)] py-10 md:py-20">
+      <main className="flex-1 bg-[linear-gradient(180deg,#F5F1E8_0%,#FFFFFF_100%)] py-10 md:py-20">
         <div className="mx-auto w-full max-w-[1200px] px-4 md:px-10">
           {/* Hero — desktop: text left, image right. Mobile: kicker +
               title first, then image, then intro and facts table. */}
