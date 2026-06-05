@@ -12,7 +12,11 @@ import { type NextRequest, NextResponse } from "next/server";
 import { parseBody } from "next-sanity/webhook";
 
 import { revalidateSecret } from "@/sanity/env";
-import { PRODUCT_TAG, SETTINGS_TAG } from "@/sanity/lib/queries";
+import {
+  PRODUCT_TAG,
+  SETTINGS_TAG,
+  SUBSCRIPTION_TAG,
+} from "@/sanity/lib/queries";
 
 type WebhookPayload = {
   _type?: string;
@@ -40,7 +44,12 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ message: "Missing _type in body" }, { status: 400 });
     }
 
-    const tag = body._type === "siteSettings" ? SETTINGS_TAG : PRODUCT_TAG;
+    const tag =
+      body._type === "siteSettings"
+        ? SETTINGS_TAG
+        : body._type === "subscriptionProduct"
+          ? SUBSCRIPTION_TAG
+          : PRODUCT_TAG;
     // Next 16 requires a cache profile alongside the tag.
     revalidateTag(tag, "default");
 

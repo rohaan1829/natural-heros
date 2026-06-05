@@ -158,7 +158,7 @@ export function ShopHeader({ crumbs = [] }: { crumbs?: Crumb[] }) {
               <HeartIcon className="h-5 w-5" />
               <Badge>2</Badge>
             </Link>
-            <Link href="/cart" aria-label="Cart (2)" className="relative">
+            <Link href="#" aria-label="Cart (2)" className="relative">
               <BagIcon className="h-5 w-5" />
               <Badge>2</Badge>
             </Link>
@@ -236,7 +236,7 @@ export function ShopHeader({ crumbs = [] }: { crumbs?: Crumb[] }) {
             <HeartIcon className="h-6 w-6" />
             <Badge>2</Badge>
           </Link>
-          <Link href="/cart" aria-label="Cart (2)" className="relative">
+          <Link href="#" aria-label="Cart (2)" className="relative">
             <BagIcon className="h-6 w-6" />
             <Badge>2</Badge>
           </Link>

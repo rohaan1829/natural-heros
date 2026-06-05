@@ -4,7 +4,81 @@
  * Once env vars are set and content is published, this fallback is
  * bypassed entirely; nothing in the production data path reads it.
  */
-import type { Product, SiteSettings } from "./types";
+import type { Product, SiteSettings, SubscriptionProduct } from "./types";
+
+/* ----------------------------------------------------------------------
+ * Subscription product fallback — used when Sanity isn't yet configured
+ * or no subscriptionProduct document has been published.
+ * ------------------------------------------------------------------- */
+
+export const previewSubscriptionProduct: SubscriptionProduct = {
+  title: "No BS Deo",
+  tagline:
+    "Eindelijk een natuurlijke deodorant waar je op kunt rekenen 🌿",
+  bullets: [
+    "Vrij van Aluminium, Alcohol, Baking Soda en Parfum",
+    "Beschermt 24 uur",
+    "Ook geurloos verkrijgbaar",
+    "Gaat tenminste 1 maand mee bij dagelijks gebruik",
+  ],
+  reviews: { count: 85, rating: 4.8, questions: 10, users: "20m+ users" },
+  inhoudLabel: "1. Kies je inhoud",
+  inhoudOption: {
+    label: "30 ml / Fresh Balance",
+    price: "€ 12.99",
+  },
+  typeLabel: "2. Kies je type",
+  typeOptions: [
+    {
+      id: "90day",
+      label: "90-Dag Abonnement",
+      savings: "BESPAAR 30%",
+      bestValue: true,
+      displayPrice: "€ 4.55",
+      originalPrice: "€4.55",
+      priceUnit: "/maand",
+      billingNote: "Billed €235.00 every 12 weeks",
+      servingNote: "€40.00/serving",
+      inclusief: [
+        "Exclusive Access to 90 Day IM8 Transformation Program",
+        "Maximum savings - lowest price per serving",
+        "90-Day Money-Back Guarantee",
+        "Share with family and friends",
+        "Free Mystery Gift",
+        "Free Daily Ultimate Mixer (US$18)",
+        "Cancel or pause anytime",
+        "Free Shipping to US, UK, CA, and most of EU and APAC",
+      ],
+    },
+    { id: "subscription", label: "Abonnement", savings: "BESPAAR 10%" },
+    { id: "onetime", label: "Eenmalig" },
+  ],
+  welcomeKitHeading: "Gratis Welcome Kit (Eerste order)",
+  welcomeKitItems: [
+    { title: "Shea Butter (Biologisch & Ongeraffineerd)", oldPrice: "€5.99" },
+    { title: "Shea Butter (Biologisch & Ongeraffineerd)", oldPrice: "€5.99" },
+    { title: "Shea Butter (Biologisch & Ongeraffineerd)", oldPrice: "€5.99" },
+    { title: "Shea Butter (Biologisch & Ongeraffineerd)", oldPrice: "€5.99" },
+  ],
+  priceLabel: "Prijs",
+  priceInclBtw: "€7.72 vanaf incl. btw",
+  priceExclBtw: "€6.72 excl. btw",
+  wholesaleStatus: "Logged in as a wholesale customer",
+  wholesaleSwitchText: "Switch to a consumer account",
+  ctaLabel: "Bestel nu! — €7.72",
+  trustBadges: [
+    { label: "Natuurlijk" },
+    { label: "Vegan" },
+    { label: "Plastic vrij" },
+    { label: "Aluminium vrij" },
+  ],
+  trustList: [
+    "Gratis verzending vanaf €35,- naar NL, BE & DUI.",
+    "Voor 23:30 besteld, morgen in huis.",
+    "Klanten geven ons een 9.4 op Kiyoh",
+    "Snel en persoonlijk geholpen door ons lieve team.",
+  ],
+};
 
 export const previewSettings: SiteSettings = {
   title: "Natural Heroes",

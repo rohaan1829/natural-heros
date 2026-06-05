@@ -137,6 +137,56 @@ export type Product = {
   };
 };
 
+/* ----------------------------------------------------------------------
+ * Subscription product (No BS Deo) — drives /subscribe
+ * ------------------------------------------------------------------- */
+
+export type SubscriptionTypeOption = {
+  id: string;
+  label: string;
+  savings?: string;
+  bestValue?: boolean;
+  displayPrice?: string;
+  originalPrice?: string;
+  priceUnit?: string;
+  billingNote?: string;
+  servingNote?: string;
+  inclusief?: string[];
+};
+
+export type WelcomeKitItem = {
+  title: string;
+  oldPrice: string;
+  image?: SanityImage;
+};
+
+export type TrustBadge = {
+  label: string;
+  icon?: SanityImage;
+};
+
+export type SubscriptionProduct = {
+  title: string;
+  tagline?: string;
+  bullets?: string[];
+  reviews?: Reviews;
+  galleryImages?: SanityImage[];
+  inhoudLabel?: string;
+  inhoudOption?: { label?: string; price?: string; image?: SanityImage };
+  typeLabel?: string;
+  typeOptions?: SubscriptionTypeOption[];
+  welcomeKitHeading?: string;
+  welcomeKitItems?: WelcomeKitItem[];
+  priceLabel?: string;
+  priceInclBtw?: string;
+  priceExclBtw?: string;
+  wholesaleStatus?: string;
+  wholesaleSwitchText?: string;
+  ctaLabel?: string;
+  trustBadges?: TrustBadge[];
+  trustList?: string[];
+};
+
 export type SiteSettings = {
   title?: string;
   logo?: SanityImage;

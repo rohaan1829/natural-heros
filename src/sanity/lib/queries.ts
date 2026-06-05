@@ -56,6 +56,57 @@ export const siteSettingsQuery = groq`
   }
 `;
 
-/** Tag used by next: { tags } and revalidateTag in the webhook. */
+/**
+ * Fetches the entire Subscribe page content. The single subscription
+ * product is treated as a singleton — first match wins.
+ */
+export const subscriptionProductQuery = groq`
+  *[_type == "subscriptionProduct"][0]{
+    title,
+    tagline,
+    bullets,
+    reviews,
+    galleryImages[]{ ..., asset-> },
+    inhoudLabel,
+    inhoudOption{
+      label,
+      price,
+      image{ ..., asset-> }
+    },
+    typeLabel,
+    typeOptions[]{
+      id,
+      label,
+      savings,
+      bestValue,
+      displayPrice,
+      originalPrice,
+      priceUnit,
+      billingNote,
+      servingNote,
+      inclusief
+    },
+    welcomeKitHeading,
+    welcomeKitItems[]{
+      title,
+      oldPrice,
+      image{ ..., asset-> }
+    },
+    priceLabel,
+    priceInclBtw,
+    priceExclBtw,
+    wholesaleStatus,
+    wholesaleSwitchText,
+    ctaLabel,
+    trustBadges[]{
+      label,
+      icon{ ..., asset-> }
+    },
+    trustList
+  }
+`;
+
+/** Tags used by next: { tags } and revalidateTag in the webhook. */
 export const PRODUCT_TAG = "product";
 export const SETTINGS_TAG = "settings";
+export const SUBSCRIPTION_TAG = "subscriptionProduct";

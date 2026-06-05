@@ -121,7 +121,7 @@ export function SiteHeader({ settings }: { settings?: SiteSettings }) {
             {loginLabel}
           </Link>
           <Link
-            href="/cart"
+            href="#"
             className="inline-flex h-12 items-center justify-center bg-forest px-[22px] py-3 font-mono text-[15px] font-medium leading-[140%] tracking-[0.02em] text-white transition-colors hover:bg-forest-deep"
           >
             {cartLabel}
