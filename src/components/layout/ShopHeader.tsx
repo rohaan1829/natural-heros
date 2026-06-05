@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,6 +11,7 @@ import {
   HeartIcon,
   ProfileIcon,
 } from "@/components/ui/icons";
+import { MobileMenuDrawer } from "@/components/layout/MobileMenuDrawer";
 
 /** Inline sage check mark for trust-strip rows. */
 function SageCheck({ className }: { className?: string }) {
@@ -103,8 +107,15 @@ type Crumb = { label: string; href?: string };
  *   (nav row is hidden; surfaced by the hamburger drawer)
  */
 export function ShopHeader({ crumbs = [] }: { crumbs?: Crumb[] }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="w-full bg-cream">
+      <MobileMenuDrawer
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        items={navItems}
+      />
       {/* Row 1 — promo banner.
           Single 32px row on desktop. Mobile uses a smaller font and
           flexible height so the message can wrap without being clipped. */}
@@ -124,6 +135,7 @@ export function ShopHeader({ crumbs = [] }: { crumbs?: Crumb[] }) {
             <button
               type="button"
               aria-label="Open menu"
+              onClick={() => setMenuOpen(true)}
               className="flex h-6 w-6 items-center justify-center text-ink"
             >
               <HamburgerIcon className="h-5 w-5" />

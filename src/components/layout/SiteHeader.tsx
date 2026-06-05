@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +10,7 @@ import {
   HeartIcon,
   ProfileIcon,
 } from "@/components/ui/icons";
+import { MobileMenuDrawer } from "@/components/layout/MobileMenuDrawer";
 import type { SiteSettings } from "@/lib/types";
 
 const fallbackNav = [
@@ -29,9 +33,16 @@ export function SiteHeader({ settings }: { settings?: SiteSettings }) {
   const nav = settings?.nav?.length ? settings.nav : fallbackNav;
   const loginLabel = settings?.cta?.loginLabel ?? "Login";
   const cartLabel = settings?.cta?.cartLabel ?? "Cart";
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="h-[72px] border-b border-forest bg-cream md:h-[100px]">
+      <MobileMenuDrawer
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        items={nav}
+      />
+
       {/* MOBILE row */}
       <div className="flex h-full items-center justify-between px-4 md:hidden">
         {/* Left cluster: hamburger + monogram */}
@@ -39,6 +50,7 @@ export function SiteHeader({ settings }: { settings?: SiteSettings }) {
           <button
             type="button"
             aria-label="Open menu"
+            onClick={() => setMenuOpen(true)}
             className="flex h-6 w-6 items-center justify-center text-ink"
           >
             <HamburgerIcon className="h-4 w-[18px]" />
