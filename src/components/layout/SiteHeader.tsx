@@ -102,18 +102,18 @@ export function SiteHeader({ settings }: { settings?: SiteSettings }) {
         </div>
 
         <div className="flex items-center justify-end gap-3">
-          <button
-            type="button"
+          <Link
+            href="/subscribe"
             className="inline-flex h-12 items-center justify-center border border-forest px-[22px] py-3 font-mono text-[15px] font-medium leading-[140%] tracking-[0.02em] text-ink transition-colors hover:bg-forest hover:text-cream"
           >
             {loginLabel}
-          </button>
-          <button
-            type="button"
+          </Link>
+          <Link
+            href="/cart"
             className="inline-flex h-12 items-center justify-center bg-forest px-[22px] py-3 font-mono text-[15px] font-medium leading-[140%] tracking-[0.02em] text-white transition-colors hover:bg-forest-deep"
           >
             {cartLabel}
-          </button>
+          </Link>
         </div>
       </div>
     </header>

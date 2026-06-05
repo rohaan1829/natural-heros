@@ -28,6 +28,7 @@
   --font-mono: var(--font-dm-mono), ui-monospace, "SFMono-Regular", Menlo,
     monospace;
   --font-display: var(--font-din), system-ui, sans-serif;
+  --font-sans: var(--font-barlow), system-ui, sans-serif;
 
   /* Layout */
   --container-site: 1440px;

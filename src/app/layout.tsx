@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Solway, DM_Mono, DM_Sans } from "next/font/google";
+import { Solway, DM_Mono, DM_Sans, Barlow } from "next/font/google";
 import "./globals.css";
 
 const solway = Solway({
@@ -24,6 +24,14 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+/** Body font used on the shop/category pages (Skin Conditions, Cart, etc.). */
+const barlow = Barlow({
+  variable: "--font-barlow",
+  weight: ["400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   title: "Natural Heroes — Eucalyptus globulus",
   description:
@@ -38,7 +46,7 @@ export default function RootLayout({
   return (
     <html
       lang="nl"
-      className={`${solway.variable} ${dmMono.variable} ${dmSans.variable} h-full antialiased`}
+      className={`${solway.variable} ${dmMono.variable} ${dmSans.variable} ${barlow.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col overflow-x-clip bg-cream text-ink">
         {children}

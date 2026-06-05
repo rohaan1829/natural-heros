@@ -9,9 +9,9 @@ import type { Product, SiteSettings } from "./types";
 export const previewSettings: SiteSettings = {
   title: "Natural Heroes",
   nav: [
-    { label: "SHOP", href: "/shop" },
-    { label: "JOURNAL", href: "/journal" },
-    { label: "OVER ONS", href: "/over-ons" },
+    { label: "SHOP", href: "/subscribe" },
+    { label: "JOURNAL", href: "/skin-conditions" },
+    { label: "OVER ONS", href: "/" },
   ],
   cta: { loginLabel: "Login", cartLabel: "Cart" },
 };
