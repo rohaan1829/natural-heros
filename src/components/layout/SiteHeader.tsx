@@ -10,9 +10,9 @@ import {
 import type { SiteSettings } from "@/lib/types";
 
 const fallbackNav = [
-  { label: "SHOP", href: "/shop" },
-  { label: "JOURNAL", href: "/journal" },
-  { label: "OVER ONS", href: "/over-ons" },
+  { label: "SHOP", href: "/subscribe" },
+  { label: "JOURNAL", href: "/skin-conditions" },
+  { label: "OVER ONS", href: "/" },
 ];
 
 /**
